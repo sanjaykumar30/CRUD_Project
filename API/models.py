@@ -33,7 +33,7 @@ class OrderItem(Base):
     __tablename__="order_items_dataset"
     order_id=Column(Integer,ForeignKey("order_dataset.order_id"))
     orderitem_id=Column(Integer,primary_key=True)
-    product_id=Column(Integer,ForeignKey("prduct_dataset.product_id"))
+    product_id=Column(Integer,ForeignKey("product_dataset.product_id"))
     shipping_limit_date=Column(DateTime)
     price=Column(Float)
     freight_value=Column(Float)
@@ -41,7 +41,7 @@ class OrderItem(Base):
 class Payment(Base):
     __tablename__="payment_dataset"
     payment_id=Column(Integer,primary_key=True)
-    order_id=Column(Integer,ForeignKey("order_dataser.order_id"))
+    order_id=Column(Integer,ForeignKey("order_dataset.order_id"))
     payment_sequential=Column(Integer)
     payment_type=Column(String)
     payment_instalments=Column(Integer)

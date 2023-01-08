@@ -9,6 +9,9 @@ class Customer(BaseModel):
     customer_city:str
     customer_state:str
 
+    class Config:
+        orm_mode = True   
+
 class Order(BaseModel):
     order_id:int
     customer_id:int
@@ -17,6 +20,10 @@ class Order(BaseModel):
     order_approved_timestamp:datetime
     order_delivered_customer_date:datetime
     order_estimated_delivery_date:datetime
+
+    class Config:
+        orm_mode = True   
+
 
 class Product(BaseModel):
     product_id:int
@@ -28,6 +35,10 @@ class Product(BaseModel):
     product_height_cm:float
     product_width_cm:float
 
+    class Config:
+        orm_mode = True   
+
+
 class OrderItem(BaseModel):
     order_id:int
     orderitem_id:int
@@ -36,6 +47,9 @@ class OrderItem(BaseModel):
     price:float
     freight_value:float
 
+    class Config:
+        orm_mode = True   
+
 class Payment(BaseModel):
     payment_id:int
     order_id:int
@@ -43,6 +57,10 @@ class Payment(BaseModel):
     payment_type:str
     payment_instalments:int
     payment_value:float
+
+    class Config:
+        orm_mode = True   
+
 
 
 
