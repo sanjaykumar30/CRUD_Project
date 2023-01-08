@@ -30,7 +30,7 @@ class Product(Base):
     product_width_cm=Column(Float)
 
 class OrderItem(Base):
-    __tablename__="order_items_dataset"
+    __tablename__="orderitem_dataset"
     order_id=Column(Integer,ForeignKey("order_dataset.order_id"))
     orderitem_id=Column(Integer,primary_key=True)
     product_id=Column(Integer,ForeignKey("product_dataset.product_id"))
